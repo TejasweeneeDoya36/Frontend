@@ -131,6 +131,7 @@ new Vue({
 
         // validate login form
         validateLogin: function(){
+            //retrieve form data
             const {email,password} = this.loginForm;
             this.clearErrors();
 
