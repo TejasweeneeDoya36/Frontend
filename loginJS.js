@@ -258,7 +258,7 @@ new Vue({
                         setTimeout(()=>{
                             window.location.href="../Vue.js/mainPageHTML.html";
                         },1500);
-                    }else{
+                    }else{//if signup fails
                         this.showMessage(result.message || "Signup failed. Try again", "error");
                     }
                 }catch(error){
