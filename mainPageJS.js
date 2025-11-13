@@ -124,7 +124,7 @@ new Vue({
 
             //rediredt to login page
             setTimeout(()=>{
-                window.location.href='loginhtml.html';
+                window.location.href='index.html';
             },1000);
         },
 
