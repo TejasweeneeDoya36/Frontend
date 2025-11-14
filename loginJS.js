@@ -190,7 +190,7 @@ new Vue({
                 this.isLoading= true;
                 try{
                     //send login request to backend API
-                    const response = await fetch ("http://localhost:3000/api/login",{
+                    const response = await fetch ("/api/login",{
                         method:"POST",
                         headers:{"Content-Type":"application/json"},
                         body: JSON.stringify({
@@ -209,7 +209,7 @@ new Vue({
                         this.loginForm.password="";
                         //redirect user to main page
                         setTimeout(()=>{
-                            window.location.href="../Frontend/main.html";
+                            window.location.href="/main";
                         },1000);
                     }else{
                         this.showMessage(data.message || "Login failed","error");
@@ -229,7 +229,7 @@ new Vue({
                 this.isLoading= true;
                 try{
                     //send data to backend signup route
-                    const response = await fetch ("http://localhost:3000/api/signup",{
+                    const response = await fetch ("/api/signup",{
                         method: "POST",
                         headers:{"Content-Type":"application/json"},
                         body: JSON.stringify({
@@ -256,7 +256,7 @@ new Vue({
 
                         //redirect user to main page
                         setTimeout(()=>{
-                            window.location.href="../Frontend/main.html";
+                            window.location.href="/main";
                         },1500);
                     }else{//if signup fails
                         this.showMessage(result.message || "Signup failed. Try again", "error");
@@ -275,7 +275,7 @@ new Vue({
         fetchUserCount: async function() {
             try{
                 //fetch from backend API
-                const response = await fetch('http://localhost:3000/api/user-count');
+                const response = await fetch('/api/user-count');
 
                 if(!response.ok){
                     throw new Error('Failed to fetch user count');
