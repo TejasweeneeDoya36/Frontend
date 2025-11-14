@@ -276,7 +276,7 @@ new Vue({
         fetchLessons: async function () {
             try{
                 //fetch lessons from backend API
-                const response= await fetch('/api/lessons');
+                const response= await fetch('http://localhost:3000/api/lessons');
                 const data = await response.json();
                 //check for success and valid lessons data
                 if ( data.success && data.lessons){
@@ -341,7 +341,7 @@ new Vue({
                     }
 
                     //fetch from backend search API
-                    const response = await fetch (`/api/search?q=${encodeURIComponent(query)}`);
+                    const response = await fetch (`http://localhost:3000/api/search?q=${encodeURIComponent(query)}`);
                     const data = await response.json();
 
                     if(data.success){
@@ -394,7 +394,7 @@ new Vue({
                     dateOfOrder: new Date().toISOString()
                 };
                 //send order data to backend API
-                const orderResponse = await fetch ('/api/orders',{
+                const orderResponse = await fetch ('http://localhost:3000/api/orders',{
                     method: 'POST',
                     headers: {'Content-Type':'application/json'},
                     body: JSON.stringify(orderData)
@@ -422,7 +422,7 @@ new Vue({
 
             try{
                 //send space updates to backend API
-                const updateResponse = await fetch ('/api/update-spaces',{
+                const updateResponse = await fetch ('http://localhost:3000/api/update-spaces',{
                     method: 'PUT',
                     headers: {'Content-Type':'application/json'},
                     body: JSON.stringify({updates: spaceUpdates})
