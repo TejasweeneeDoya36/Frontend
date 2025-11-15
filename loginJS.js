@@ -208,7 +208,7 @@ new Vue({
                         this.loginForm.password="";
                         //redirect user to main page
                         setTimeout(()=>{
-                            window.location.href="../Frontend/index.html";
+                            window.location.href="../Frontend/main.html";
                         },1000);
                     }else{
                         this.showMessage(data.message || "Login failed","error");
@@ -255,7 +255,7 @@ new Vue({
 
                         //redirect user to main page
                         setTimeout(()=>{
-                            window.location.href="../Frontend/index.html";
+                            window.location.href="../Frontend/main.html";
                         },1500);
                     }else{
                         this.showMessage(result.message || "Signup failed. Try again", "error");
