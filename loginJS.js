@@ -204,7 +204,7 @@ new Vue({
                 this.isLoading= true;
                 try{
                     //send login request to backend API
-                    const response = await fetch ("https://node-js-express-js-goe7.onrender.com/api/login",{
+                    const response = await fetch ("https://node-js-express-js-7li6.onrender.com/api/login",{
                         method:"POST",
                         headers:{"Content-Type":"application/json"},
                         body: JSON.stringify({
@@ -243,7 +243,7 @@ new Vue({
                 this.isLoading= true;
                 try{
                     //send data to backend signup route
-                    const response = await fetch ("https://node-js-express-js-goe7.onrender.com/api/signup",{
+                    const response = await fetch ("https://node-js-express-js-7li6.onrender.com/api/signup",{
                         method: "POST",
                         headers:{"Content-Type":"application/json"},
                         body: JSON.stringify({
@@ -289,7 +289,7 @@ new Vue({
         fetchUserCount: async function() {
             try{
                 //fetch from backend API
-                const response = await fetch('https://node-js-express-js-goe7.onrender.com/api/user-count');
+                const response = await fetch('https://node-js-express-js-7li6.onrender.com/api/user-count');
 
                 if(!response.ok){
                     throw new Error('Failed to fetch user count');
