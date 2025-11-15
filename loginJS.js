@@ -131,7 +131,6 @@ new Vue({
 
         // validate login form
         validateLogin: function(){
-            //retrieve form data
             const {email,password} = this.loginForm;
             this.clearErrors();
 
@@ -209,7 +208,7 @@ new Vue({
                         this.loginForm.password="";
                         //redirect user to main page
                         setTimeout(()=>{
-                            window.location.href="../Frontend/main.html";
+                            window.location.href="../Frontend/index.html";
                         },1000);
                     }else{
                         this.showMessage(data.message || "Login failed","error");
@@ -256,9 +255,9 @@ new Vue({
 
                         //redirect user to main page
                         setTimeout(()=>{
-                            window.location.href="../Frontend/main.html";
+                            window.location.href="../Frontend/index.html";
                         },1500);
-                    }else{//if signup fails
+                    }else{
                         this.showMessage(result.message || "Signup failed. Try again", "error");
                     }
                 }catch(error){
