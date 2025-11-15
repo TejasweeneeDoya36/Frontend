@@ -500,6 +500,7 @@ new Vue({
 
         //add css animation for notifications
         var style = document.createElement('style');
+        //define keyframes and notification styles
         style.textContent=`
             @keyframes slideIn{
                 from{
