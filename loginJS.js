@@ -68,6 +68,21 @@ new Vue({
             this.message.text='';
             this.message.type='';
         },
+         clearError: function(){
+            this.errorMessage='';
+            this.successMessage='';
+        },
+
+        validateField: function(field){
+            const value = this.signupForm[field];
+
+            if(!value){
+                this.errors[field]=`${field} is required`;
+            }else{
+                this.errors[field]='';
+            }
+        },
+
 
         //validate email format
         isValidEmail: function(email){

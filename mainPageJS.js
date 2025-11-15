@@ -36,6 +36,7 @@ new Vue({
             name:'',
             phone:''
         },
+
     },
 
     //computed methods - automatically update based on dependent data changes
@@ -127,7 +128,6 @@ new Vue({
                 window.location.href='index.html';
             },1000);
         },
-
         //navigation
         showLessonsPage: function(){
             this.currentPage='lessons'; //switch to lessons view
