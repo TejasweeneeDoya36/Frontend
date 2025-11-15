@@ -276,7 +276,7 @@ new Vue({
         fetchLessons: async function () {
             try{
                 //fetch lessons from backend API
-                const response= await fetch('https://node-js-express-js-xm87.onrender.com/api/lessons');
+                const response= await fetch('https://node-js-express-js-goe7.onrender.com/api/lessons');
                 const data = await response.json();
                 //check for success and valid lessons data
                 if ( data.success && data.lessons){
@@ -341,7 +341,7 @@ new Vue({
                     }
 
                     //fetch from backend search API
-                    const response = await fetch (`https://node-js-express-js-xm87.onrender.com/api/search?q=${encodeURIComponent(query)}`);
+                    const response = await fetch (`https://node-js-express-js-goe7.onrender.com/api/search?q=${encodeURIComponent(query)}`);
                     const data = await response.json();
 
                     if(data.success){
@@ -394,7 +394,7 @@ new Vue({
                     dateOfOrder: new Date().toISOString()
                 };
                 //send order data to backend API
-                const orderResponse = await fetch ('https://node-js-express-js-xm87.onrender.com/api/orders',{
+                const orderResponse = await fetch ('https://node-js-express-js-goe7.onrender.com/api/orders',{
                     method: 'POST',
                     headers: {'Content-Type':'application/json'},
                     body: JSON.stringify(orderData)
@@ -422,7 +422,7 @@ new Vue({
 
             try{
                 //send space updates to backend API
-                const updateResponse = await fetch ('https://node-js-express-js-xm87.onrender.com/api/update-spaces',{
+                const updateResponse = await fetch ('https://node-js-express-js-goe7.onrender.com/api/update-spaces',{
                     method: 'PUT',
                     headers: {'Content-Type':'application/json'},
                     body: JSON.stringify({updates: spaceUpdates})
