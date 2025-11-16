@@ -76,7 +76,7 @@
                                 :class="{error: errors.loginEmail}"
                                 v-model.trim="loginForm.email"
                                 v-on:input="clearError('loginEmail')"
-                                v-on:blur="validateField('loginEmail')"
+                                v-on:blur="validateField('email')"
                                 placeholder="Enter your email"
                                 :disabled="isLoading">
                             <!--error message-->   
@@ -94,7 +94,7 @@
                                 :class="{error: errors.loginPassword}"
                                 v-model.trim="loginForm.password"
                                 v-on:input="clearError('loginPassword')"
-                                v-on:blur="validateField('loginPassword')"
+                                v-on:blur="validateField('password')"
                                 placeholder="Enter your password"
                                 :disabled="isLoading">
                             <!--error message-->    
@@ -126,7 +126,7 @@
                                 :class="{error: errors.signupName}"
                                 v-model.trim="signupForm.name"
                                 v-on:input="clearError('signupName')"
-                                v-on:blur="validateField('signupName')"
+                                v-on:blur="validateField('name')"
                                 placeholder="Enter your full name"
                                 :disabled="isLoading">
                             <!--error message-->    
@@ -144,7 +144,7 @@
                                 :class="{error: errors.signupEmail}"
                                 v-model.trim="signupForm.email"
                                 v-on:input="clearError('signupEmail')"
-                                v-on:blur="validateField('signupEmail')"
+                                v-on:blur="validateField('email')"
                                 placeholder="Enter your email"
                                 :disabled="isLoading">
                             <!--error message-->    
@@ -162,7 +162,7 @@
                                 :class="{error: errors.signupPassword}"
                                 v-model.trim="signupForm.password"
                                 v-on:input="clearError('signupPassword'); triggerPasswordCheck()"
-                                v-on:blur="validateField('signupPassword')"
+                                v-on:blur="validateField('password')"
                                 placeholder="Create your password"
                                 :disabled="isLoading">
                             <!--error message-->    
@@ -187,7 +187,7 @@
                                 :class="{error: errors.signupConfirm}"
                                 v-model.trim="signupForm.confirmPassword"
                                 v-on:input="clearError('signupConfirm')"
-                                v-on:blur="validateField('signupConfirm')"
+                                v-on:blur="validateField('confirmPassword')"
                                 placeholder="Confirm your password"
                                 :disabled="isLoading">
                             <!--error message-->    
