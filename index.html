@@ -161,7 +161,7 @@
                                 class="form-control"
                                 :class="{error: errors.signupPassword}"
                                 v-model.trim="signupForm.password"
-                                v-on:input="clearError('signupPassword'); triggerPasswordStrength()"
+                                v-on:input="clearError('signupPassword'); triggerPasswordCheck()"
                                 v-on:blur="validateField('signupPassword')"
                                 placeholder="Create your password"
                                 :disabled="isLoading">

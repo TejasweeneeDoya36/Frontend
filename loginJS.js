@@ -68,21 +68,85 @@ new Vue({
             this.message.text='';
             this.message.type='';
         },
-         clearError: function(){
-            this.errorMessage='';
-            this.successMessage='';
+        clearError: function(field){
+            this.$delete(this.errors,field);//remove specific field error
         },
 
         validateField: function(field){
-            const value = this.signupForm[field];
-
-            if(!value){
-                this.errors[field]=`${field} is required`;
-            }else{
-                this.errors[field]='';
+            
+            if(this.activeTab==='login'){
+              this.validateLoginField(field);
+            } else{
+              this.validateSignupField(field);
             }
         },
+        //check login fields
+        validateLoginField: function(field){
+            const value = this.loginForm[field];    
 
+            if(field==='email'){
+                if(!value){
+                    this.errors.loginEmail='Email is required';
+                } else if (!this.isValidEmail(value)){
+                    this.errors.loginEmail='Please enter a valid email address';
+                } else{
+                    this.clearError('loginEmail');
+                }
+            }
+
+            if(field==='password'){
+                if(!value){
+                    this.errors.loginPassword='Password is required';
+                } else if (value.length < 6){
+                    this.errors.loginPassword='Password must be atleast 6 characters';
+                } else{
+                    this.clearError('loginPassword');
+                }
+            }
+
+        },
+
+        //check signup fields
+        validateSignupField: function(field){
+            const value = this.signupForm[field];
+            const {name,email,password,confirmPassword} = this.signupForm;
+
+            if(field==='name'){
+                if(!value.trim()){
+                    this.errors.signupName='Full name is required';
+                } else{
+                    this.clearError('signupName');
+                }
+            }
+            if(field==='email'){
+                if(!value.trim()){
+                    this.errors.signupEmail='Email is required';
+                } else if (!this.isValidEmail(value)){
+                    this.errors.signupEmail='Please enter a valid email adress';
+                } else{
+                    this.clearError('signupEmail');
+                }
+            }
+            if(field==='password'){
+                if(!value){
+                    this.errors.signupPassword='Password is required';
+                } else if (value.length < 6){
+                    this.errors.signupPassword='Password must be atleast 6 characters';
+                } else{
+                    this.clearError('signupPassword');
+                }
+            }
+
+            if(field==='confirmPassword'){
+                if(!value){
+                    this.errors.signupConfirm='Please confirm your password';
+                } else if (password !== confirmPassword ){
+                    this.errors.signupConfirm='Password do not match';
+                } else{
+                    this.clearError('signupConfirm');
+                }
+            }
+        },
 
         //validate email format
         isValidEmail: function(email){
@@ -226,7 +290,7 @@ new Vue({
                             window.location.href="../Frontend/main.html";
                         },1000);
                     }else{
-                        this.showMessage(data.message || "Login failed","error");
+                        this.showMessage(result.message || "Login failed","error");
                     }
                 }  catch(err){
                     this.isLoading=false;
